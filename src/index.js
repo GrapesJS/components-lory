@@ -4,7 +4,12 @@ import loadBlocks from './blocks';
 
 export default grapesjs.plugins.add('grapesjs-tiny-slider', (editor, opts = {}) => {
   const options = { ...{
-    // default options
+    // Object to extend the default slider block, eg. `{ label: 'Slider', attributes: { ... } }`
+    // Pass a falsy value to avoid adding the block
+    sliderBlock: {},
+
+    // Script to load dynamically in case no lory instance found
+    script: 'https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.3.4/lory.min.js',
   },  ...opts };
 
   // Add components
