@@ -10,12 +10,9 @@ Slider component with [tiny-slider](https://github.com/ganlanyuan/tiny-slider) a
 
 * Plugin name: `grapesjs-tiny-slider`
 * Components
-  * `new-component1`
-  * `new-component2`
+  * `tiny-slider`
 * Blocks
-  * `new-block1`
-  * `new-block1`
-...
+  * `tiny-slider`
 
 
 
@@ -23,9 +20,9 @@ Slider component with [tiny-slider](https://github.com/ganlanyuan/tiny-slider) a
 
 ## Options
 
-|Option|Description|Default|
+| Option | Description | Default |
 |-|-|-
-|`option1`|Description option|`default value`|
+| `option1` | Description option | `default value` |
 
 
 
@@ -86,7 +83,7 @@ Install dependencies
 $ npm i
 ```
 
-The plugin relies on GrapesJS via `peerDependencies` so you have to install it manually (without adding it to package.json)
+The plugin relies on GrapesJS via `peerDependencies` so you have to install it manually
 
 ```sh
 $ npm i grapesjs --no-save
