@@ -90,12 +90,16 @@ export default (dc, config = {}) => {
           ]
         }],
 
+        'script-deps': config.script,
+
         script: function () {
+          var el = this;
+          var deps = '{[ script-deps ]}';
           var falsies = ['0', 'false'];
           var infinite = '{[ infinite ]}';
           infinite = infinite == 'true' ? 1 : parseInt(infinite, 10);
           var options = {
-            slidesToScroll: '{[ slides-to-scroll ]}',
+            slidesToScroll: parseInt('{[ slides-to-scroll ]}', 10),
             enableMouseEvents: falsies.indexOf('{[ enable-mouse-events ]}') >= 0 ? 0 : 1,
             infinite: isNaN(infinite) ? false : infinite,
             rewind: falsies.indexOf('{[ rewind ]}') >= 0 ? 0 : 1,
@@ -104,7 +108,19 @@ export default (dc, config = {}) => {
             snapBackSpeed: '{[ snap-back-speed ]}',
             ease: '{[ ease ]}',
           };
-          lory(this, options);
+
+          var initSlider = function() {
+            window.sliderLory = lory(el, options);
+          };
+
+          if (deps && typeof lory == 'undefined') {
+            var script = document.createElement('script');
+            script.src = deps;
+            script.onload = initSlider;
+            document.head.appendChild(script);
+          } else {
+            initSlider();
+          }
         },
         ...config.sliderProps
       },

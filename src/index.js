@@ -33,7 +33,7 @@ export default grapesjs.plugins.add('grapesjs-lory-slider', (editor, opts = {}) 
         <g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g>
       </svg>`,
 
-    // Script to load dynamically in case no lory instance found
+    // Script to load dynamically in case no lory instance was found
     script: 'https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.3.4/lory.min.js',
 
     // TODO
