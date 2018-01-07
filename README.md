@@ -4,6 +4,8 @@
 Slider component by using [lory](https://github.com/meandmax/lory)
 
 
+## Requirements
+* GrapesJS v0.12.58 or higher
 
 
 ## Summary
