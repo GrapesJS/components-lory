@@ -2,6 +2,7 @@ const prefix = 'lory-';
 const sliderName = `${prefix}slider`;
 const slideName = `${prefix}slide`;
 const slidesName = `${prefix}slides`;
+const frameName = `${prefix}frame`;
 const prevName = `${prefix}prev`;
 const nextName = `${prefix}next`;
 
@@ -11,6 +12,7 @@ export default {
   slidesName,
   prevName,
   nextName,
+  frameName,
 
   // Selectors
   sliderSelector: `[data-${sliderName}]`,
@@ -18,6 +20,7 @@ export default {
   slideSelector: `[data-${slideName}]`,
   prevSelector: `[data-${prevName}]`,
   nextSelector: `[data-${nextName}]`,
+  frameSelector: `[data-${frameName}]`,
 
   // IDs
   sliderId: `data-${sliderName}`,
@@ -25,4 +28,5 @@ export default {
   slidesId: `data-${slidesName}`,
   prevId: `data-${prevName}`,
   nextId: `data-${nextName}`,
+  frameId: `data-${frameName}`,
 }

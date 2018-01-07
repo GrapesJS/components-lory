@@ -7,6 +7,7 @@ export default (editor, config = {}) => {
     prevId,
     nextId,
     sliderName,
+    frameId,
     sliderId,
     slidesId,
     slideId
@@ -23,7 +24,7 @@ export default (editor, config = {}) => {
     `,
     content: `
       <div class="slider js_slider" ${sliderId}>
-          <div class="frame js_frame">
+          <div class="frame js_frame" ${frameId}>
               <div class="slides js_slides" ${slidesId}>
                   <div class="js_slide" ${slideId}></div>
                   <div class="js_slide" ${slideId}></div>

@@ -4,6 +4,7 @@ import Slides from './Slides';
 import Slide from './Slide';
 import NavPrev from './NavPrev';
 import NavNext from './NavNext';
+import SliderFrame from './SliderFrame';
 
 export default (editor, config = {}) => {
   const dc = editor.DomComponents;
@@ -17,4 +18,5 @@ export default (editor, config = {}) => {
   Slide(dc, config);
   NavPrev(dc, config);
   NavNext(dc, config);
+  SliderFrame(dc, config);
 }
