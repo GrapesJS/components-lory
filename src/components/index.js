@@ -1,6 +1,8 @@
 import constants from '../constants';
 import Slider from './Slider';
+import Slides from './Slides';
 import Slide from './Slide';
+import NavPrev from './NavPrev';
 
 export default (editor, config = {}) => {
   const dc = editor.DomComponents;
@@ -10,5 +12,7 @@ export default (editor, config = {}) => {
   const { sliderName, slideName, sliderId, slideId } = constants;
 
   Slider(dc, config);
+  Slides(dc, config);
   Slide(dc, config);
+  NavPrev(dc, config);
 }

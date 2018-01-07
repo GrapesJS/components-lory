@@ -3,7 +3,14 @@ import constants from './constants';
 export default (editor, config = {}) => {
   const bm = editor.BlockManager;
   const sliderBlock = config.sliderBlock;
-  const { sliderName, sliderId, slideId } = constants;
+  const {
+    prevId,
+    nextId,
+    sliderName,
+    sliderId,
+    slidesId,
+    slideId
+  } = constants;
 
   // TODO make js_frame, js_slides, js_prev, js_next private
 
@@ -17,16 +24,16 @@ export default (editor, config = {}) => {
     content: `
       <div class="slider js_slider" ${sliderId}>
           <div class="frame js_frame">
-              <div class="slides js_slides">
+              <div class="slides js_slides" ${slidesId}>
                   <div class="js_slide" ${slideId}></div>
                   <div class="js_slide" ${slideId}></div>
                   <div class="js_slide" ${slideId}></div>
               </div>
           </div>
-          <span class="js_prev prev">
+          <span class="js_prev prev" ${prevId}>
               <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
           </span>
-          <span class="js_next next">
+          <span class="js_next next" ${nextId}>
               <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
           </span>
       </div>
