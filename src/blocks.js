@@ -3,7 +3,7 @@ import constants from './constants';
 export default (editor, config = {}) => {
   const bm = editor.BlockManager;
   const sliderBlock = config.sliderBlock;
-  const { sliderName, sliderId } = constants;
+  const { sliderName, sliderId, slideId } = constants;
 
   // TODO make js_frame, js_slides, js_prev, js_next private
 
@@ -18,9 +18,9 @@ export default (editor, config = {}) => {
       <div class="slider js_slider" ${sliderId}>
           <div class="frame js_frame">
               <div class="slides js_slides">
-                  <div class="js_slide"></div>
-                  <div class="js_slide"></div>
-                  <div class="js_slide"></div>
+                  <div class="js_slide" ${slideId}></div>
+                  <div class="js_slide" ${slideId}></div>
+                  <div class="js_slide" ${slideId}></div>
               </div>
           </div>
           <span class="js_prev prev">

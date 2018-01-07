@@ -5,13 +5,15 @@ export default (editor, config = {}) => {
   const defaultType = dc.getType('default');
   const defaultModel = defaultType.model;
   const defaultView = defaultType.view;
-  const { sliderName, sliderId } = constants;
+  const { sliderName, slideName, sliderId, slideId } = constants;
 
   dc.addType(sliderName, {
 
     model: defaultModel.extend({
       defaults: {
         ...defaultModel.prototype.defaults,
+
+        name: 'Slider',
 
         // Slides scrolled at once
         'slides-to-scroll': 1,
@@ -76,5 +78,25 @@ export default (editor, config = {}) => {
         }
       }
     }),
+  });
+
+
+  dc.addType(slideName, {
+
+    model: defaultModel.extend({
+      defaults: {
+        ...defaultModel.prototype.defaults,
+        name: 'Slide',
+        ...config.slideProps
+      },
+    }, {
+      isComponent(el) {
+        if (el.hasAttribute && el.hasAttribute(slideId)) {
+          return { type: slideName };
+        }
+      },
+    }),
+
+    view: defaultView
   });
 }
