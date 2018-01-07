@@ -25,12 +25,6 @@ export default (editor, config = {}) => {
     content: `
       <div ${sliderId}></div>
       <style>
-
-        .slides {
-          display: inline-block;
-          transition-delay: 1ms;
-        }
-
         .prev {
           position: absolute;
           top: 50%;

@@ -13,6 +13,10 @@ export default (dc, config = {}) => {
         name: 'Slides',
         droppable: slideSelector,
         draggable: frameSelector,
+        style: {
+          display: 'inline-block',
+          'transition-delay': '1ms'
+        },
         ...config.slidesProps
       },
     }, {
