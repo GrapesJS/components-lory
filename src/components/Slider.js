@@ -144,9 +144,9 @@ export default (dc, config = {}) => {
         if (!comps.length) {
           comps.add(`<div class="frame js_frame" ${frameId}>
               <div class="slides js_slides" ${slidesId}>
-                  <div class="js_slide" ${slideId}></div>
-                  <div class="js_slide" ${slideId}></div>
-                  <div class="js_slide" ${slideId}></div>
+                  <div ${slideId}></div>
+                  <div ${slideId}></div>
+                  <div ${slideId}></div>
               </div>
           </div>
           <span class="js_prev prev" ${prevId}>

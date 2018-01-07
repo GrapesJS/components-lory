@@ -13,6 +13,16 @@ export default (dc, config = {}) => {
         ...defaultModel.prototype.defaults,
         name: 'Slide',
         draggable: slidesSelector,
+        style: {
+          display: `inline-block`,
+          position: 'relative',
+          background: '#2E435A',
+          color: '#fff',
+          width: '880px',
+          'margin-right': '10px',
+          'vertical-align': 'top',
+          'min-height': '130px',
+        },
         ...config.slideProps
       },
     }, {

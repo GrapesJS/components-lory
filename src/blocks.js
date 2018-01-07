@@ -64,25 +64,6 @@ export default (editor, config = {}) => {
           cursor: pointer;
           right: 0;
         }
-
-        .next svg, .prev svg {
-          width: 25px;
-        }
-
-        .js_slide {
-          display: inline-block;
-          vertical-align: top;
-          position: relative;
-          min-height: 130px;
-          text-align: center;
-          font-size: 15px;
-          line-height: 30px;
-          background: #2E435A;
-          color: #fff;
-
-          margin-right: 10px;
-          width: 880px;
-        }
       </style>
     `,
     ...sliderBlock
