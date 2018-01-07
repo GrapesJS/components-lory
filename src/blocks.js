@@ -3,15 +3,7 @@ import constants from './constants';
 export default (editor, config = {}) => {
   const bm = editor.BlockManager;
   const sliderBlock = config.sliderBlock;
-  const {
-    prevId,
-    nextId,
-    sliderName,
-    frameId,
-    sliderId,
-    slidesId,
-    slideId
-  } = constants;
+  const { sliderName } = constants;
 
   // TODO make js_frame, js_slides, js_prev, js_next private
 
@@ -22,28 +14,7 @@ export default (editor, config = {}) => {
       </svg>
       <div class="gjs-block-label">Slider</div>
     `,
-    content: `
-      <div ${sliderId}></div>
-      <style>
-        .prev {
-          position: absolute;
-          top: 50%;
-          margin-top: -25px;
-          display: block;
-          cursor: pointer;
-          left: 0;
-        }
-
-        .next {
-          position: absolute;
-          top: 50%;
-          margin-top: -25px;
-          display: block;
-          cursor: pointer;
-          right: 0;
-        }
-      </style>
-    `,
+    content: { type: sliderName },
     ...sliderBlock
   });
 }

@@ -13,6 +13,14 @@ export default (dc, config = {}) => {
         name: 'Nav Previous',
         copyable: 0,
         draggable: sliderSelector,
+        style: {
+          position: 'absolute',
+          display: 'block',
+          cursor: 'pointer',
+          top: '50%',
+          left: 0,
+          'margin-top': '-25px',
+        },
         ...config.prevProps
       },
     }, {
