@@ -8,7 +8,12 @@ export default (dc, config = {}) => {
     prevSelector,
     nextSelector,
     sliderName,
-    sliderId
+    sliderId,
+    prevId,
+    nextId,
+    frameId,
+    slidesId,
+    slideId
   } = constants;
 
   dc.addType(sliderName, {
@@ -73,14 +78,29 @@ export default (dc, config = {}) => {
 
     view: defaultView.extend({
       init() {
-        //this.listenTo(this.model, 'change:startfrom change:endText', this.updateScript);
+        const props = ['slides-to-scroll', 'enable-mouse-events', 'slide-speed',
+          'rewind-speed', 'snap-back-speed', 'infinite', 'rewind', 'ease'];
+        const reactTo = props.map(prop => `change:${prop}`).join(' ');
+        this.listenTo(this.model, reactTo, this.render);
         const comps = this.model.components();
 
         // Add a basic template if it's not yet initialized
         if (!comps.length) {
-          //comps.add(``);
+          comps.add(`<div class="frame js_frame" ${frameId}>
+              <div class="slides js_slides" ${slidesId}>
+                  <div class="js_slide" ${slideId}></div>
+                  <div class="js_slide" ${slideId}></div>
+                  <div class="js_slide" ${slideId}></div>
+              </div>
+          </div>
+          <span class="js_prev prev" ${prevId}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+          </span>
+          <span class="js_next next" ${nextId}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+          </span>`);
         }
-      }
+      },
     }),
   });
 }
