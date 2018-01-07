@@ -51,9 +51,49 @@ export default (dc, config = {}) => {
 
         droppable: `${prevSelector}, ${nextSelector}`,
 
+        traits: [{
+          type: 'checkbox',
+          label: 'Infinite',
+          name: 'infinite',
+          changeProp: 1,
+        },{
+          type: 'checkbox',
+          label: 'Rewind',
+          name: 'rewind',
+          changeProp: 1,
+        },{
+          type: 'number',
+          label: 'Slide speed',
+          name: 'slide-speed',
+          changeProp: 1,
+        },{
+          type: 'number',
+          label: 'Rewind speed',
+          name: 'rewind-speed',
+          changeProp: 1,
+        }, {
+          type: 'number',
+          label: 'Slides to scroll',
+          name: 'slides-to-scroll',
+          changeProp: 1,
+        }, {
+          type: 'select',
+          label: 'Timing',
+          name: 'ease',
+          changeProp: 1,
+          options: [
+            'ease',
+            'linear',
+            'ease-in',
+            'ease-out',
+            'ease-in-out'
+          ]
+        }],
+
         script: function () {
           var falsies = ['0', 'false'];
-          var infinite = parseInt('{[ infinite ]}', 10);
+          var infinite = '{[ infinite ]}';
+          infinite = infinite == 'true' ? 1 : parseInt(infinite, 10);
           var options = {
             slidesToScroll: '{[ slides-to-scroll ]}',
             enableMouseEvents: falsies.indexOf('{[ enable-mouse-events ]}') >= 0 ? 0 : 1,
