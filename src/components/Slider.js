@@ -51,6 +51,12 @@ export default (dc, config = {}) => {
 
         droppable: `${prevSelector}, ${nextSelector}`,
 
+        style: {
+          position: 'relative',
+          width: '980px',
+          margin: '0 auto',
+        },
+
         traits: [{
           type: 'checkbox',
           label: 'Infinite',

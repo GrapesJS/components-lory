@@ -23,24 +23,8 @@ export default (editor, config = {}) => {
       <div class="gjs-block-label">Slider</div>
     `,
     content: `
-      <div class="slider" ${sliderId}></div>
+      <div ${sliderId}></div>
       <style>
-        .slider {
-          position: relative;
-          width: 980px;
-          margin: 0 auto;
-        }
-
-        .frame {
-          width: 880px;
-          margin: 0 auto;
-
-          position: relative;
-          font-size: 0;
-          line-height: 0;
-          overflow: hidden;
-          white-space: nowrap;
-        }
 
         .slides {
           display: inline-block;

@@ -13,6 +13,13 @@ export default (dc, config = {}) => {
         ...defaultModel.prototype.defaults,
         name: 'Slider Frame',
         droppable: slidesSelector,
+        style: {
+          width: '880px',
+          margin: '0 auto',
+          position: 'relative',
+          overflow: 'hidden',
+          'white-space': 'nowrap'
+        },
         ...config.slideProps
       },
     }, {
