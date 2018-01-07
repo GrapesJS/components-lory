@@ -14,6 +14,15 @@ export default grapesjs.plugins.add('grapesjs-lory-slider', (editor, opts = {}) 
     // Object to extend the default slide properties
     slideProps: {},
 
+    // Object to extend the default slides properties
+    slidesProps: {},
+
+    // Object to extend the default previous nav properties
+    prevProps: {},
+
+    // Object to extend the default next nav properties
+    nextProps: {},
+
     // Script to load dynamically in case no lory instance found
     script: 'https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.3.4/lory.min.js',
 

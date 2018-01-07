@@ -3,20 +3,22 @@ import constants from '../constants';
 export default (dc, config = {}) => {
   const defaultType = dc.getType('default');
   const defaultModel = defaultType.model;
-  const { slidesName, slidesId } = constants;
+  const { nextName, nextId, sliderSelector } = constants;
 
-  dc.addType(slidesName, {
+  dc.addType(nextName, {
 
     model: defaultModel.extend({
       defaults: {
         ...defaultModel.prototype.defaults,
-        name: 'Slides',
-        ...config.slidesProps
+        name: 'Nav Next',
+        copyable: 0,
+        draggable: sliderSelector,
+        ...config.nextProps
       },
     }, {
       isComponent(el) {
-        if (el.hasAttribute && el.hasAttribute(slidesId)) {
-          return { type: slidesName };
+        if (el.hasAttribute && el.hasAttribute(nextId)) {
+          return { type: nextName };
         }
       },
     }),

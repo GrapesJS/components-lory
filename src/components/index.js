@@ -3,6 +3,7 @@ import Slider from './Slider';
 import Slides from './Slides';
 import Slide from './Slide';
 import NavPrev from './NavPrev';
+import NavNext from './NavNext';
 
 export default (editor, config = {}) => {
   const dc = editor.DomComponents;
@@ -15,4 +16,5 @@ export default (editor, config = {}) => {
   Slides(dc, config);
   Slide(dc, config);
   NavPrev(dc, config);
+  NavNext(dc, config);
 }

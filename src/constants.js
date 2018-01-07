@@ -11,6 +11,7 @@ export default {
   slidesName,
   prevName,
   nextName,
+  sliderSelector: `[data-${sliderName}]`,
   sliderId: `data-${sliderName}`,
   slideId: `data-${slideName}`,
   slidesId: `data-${slidesName}`,

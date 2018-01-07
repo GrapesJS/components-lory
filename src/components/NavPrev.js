@@ -3,7 +3,7 @@ import constants from '../constants';
 export default (dc, config = {}) => {
   const defaultType = dc.getType('default');
   const defaultModel = defaultType.model;
-  const { prevName, prevId } = constants;
+  const { prevName, prevId, sliderSelector } = constants;
 
   dc.addType(prevName, {
 
@@ -11,7 +11,9 @@ export default (dc, config = {}) => {
       defaults: {
         ...defaultModel.prototype.defaults,
         name: 'Nav Previous',
-        ...config.slideProps
+        copyable: 0,
+        draggable: sliderSelector,
+        ...config.prevProps
       },
     }, {
       isComponent(el) {
