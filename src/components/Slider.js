@@ -5,6 +5,7 @@ export default (dc, config = {}) => {
   const defaultModel = defaultType.model;
   const defaultView = defaultType.view;
   const {
+    frameName,
     prevSelector,
     nextSelector,
     sliderName,
@@ -156,17 +157,11 @@ export default (dc, config = {}) => {
 
         // Add a basic template if it's not yet initialized
         if (!comps.length) {
-          comps.add(`<div class="js_frame" ${frameId}>
-              <div class="js_slides" ${slidesId}>
-                  ${config.slideEls}
-              </div>
+          comps.add(`<div data-gjs-type="${frameName}">
+              <div class="${config.classSlides}">${config.slideEls}</div>
           </div>
-          <span class="js_prev" ${prevId}>
-              ${config.prevEl}
-          </span>
-          <span class="js_next" ${nextId}>
-              ${config.nextEl}
-          </span>`);
+          <span class="${config.classPrev}">${config.prevEl}</span>
+          <span class="${config.classNext}">${config.nextEl}</span>`);
         }
       },
     }),

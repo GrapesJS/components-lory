@@ -17,6 +17,9 @@ export default grapesjs.plugins.add('grapesjs-lory-slider', (editor, opts = {}) 
     // Object to extend the default slides properties
     slidesProps: {},
 
+    // Object to extend the default slider frame properties
+    frameProps: {},
+
     // Object to extend the default previous nav properties
     prevProps: {},
 

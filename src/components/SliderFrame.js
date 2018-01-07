@@ -20,11 +20,19 @@ export default (dc, config = {}) => {
           overflow: 'hidden',
           'white-space': 'nowrap'
         },
-        ...config.slideProps
+        ...config.frameProps
       },
+
+      init() {
+        const cls = config.classFrame;
+        this.get('classes').pluck('name').indexOf(cls) < 0 && this.addClass(cls);
+      }
     }, {
       isComponent(el) {
-        if (el.hasAttribute && el.hasAttribute(frameId)) {
+        let cls = el.className;
+        cls = cls && cls.toString();
+
+        if (cls && cls.split(' ').indexOf(config.classFrame) >= 0) {
           return { type: frameName };
         }
       },
