@@ -97,6 +97,10 @@ export default (dc, config = {}) => {
         }],
 
         'script-deps': config.script,
+        'class-frame': config.classFrame,
+        'class-slides': config.classSlides,
+        'class-prev': config.classPrev,
+        'class-next': config.classNext,
 
         script: function () {
           var el = this;
@@ -113,6 +117,10 @@ export default (dc, config = {}) => {
             rewindSpeed: '{[ rewind-speed ]}',
             snapBackSpeed: '{[ snap-back-speed ]}',
             ease: '{[ ease ]}',
+            classNameFrame: '{[ class-frame ]}',
+            classNameSlideContainer: '{[ class-slides ]}',
+            classNamePrevCtrl: '{[ class-prev ]}',
+            classNameNextCtrl: '{[ class-next ]}',
           };
 
           var initSlider = function() {
@@ -148,17 +156,15 @@ export default (dc, config = {}) => {
 
         // Add a basic template if it's not yet initialized
         if (!comps.length) {
-          comps.add(`<div class="frame js_frame" ${frameId}>
-              <div class="slides js_slides" ${slidesId}>
-                  <div ${slideId}></div>
-                  <div ${slideId}></div>
-                  <div ${slideId}></div>
+          comps.add(`<div class="js_frame" ${frameId}>
+              <div class="js_slides" ${slidesId}>
+                  ${config.slideEls}
               </div>
           </div>
-          <span class="js_prev prev" ${prevId}>
+          <span class="js_prev" ${prevId}>
               ${config.prevEl}
           </span>
-          <span class="js_next next" ${nextId}>
+          <span class="js_next" ${nextId}>
               ${config.nextEl}
           </span>`);
         }
