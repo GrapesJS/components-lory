@@ -1,11 +1,10 @@
-import constants from './constants';
+import constants from '../constants';
 
-export default (editor, config = {}) => {
-  const dc = editor.DomComponents;
+export default (dc, config = {}) => {
   const defaultType = dc.getType('default');
   const defaultModel = defaultType.model;
   const defaultView = defaultType.view;
-  const { sliderName, slideName, sliderId, slideId } = constants;
+  const { sliderName, sliderId } = constants;
 
   dc.addType(sliderName, {
 
@@ -78,25 +77,5 @@ export default (editor, config = {}) => {
         }
       }
     }),
-  });
-
-
-  dc.addType(slideName, {
-
-    model: defaultModel.extend({
-      defaults: {
-        ...defaultModel.prototype.defaults,
-        name: 'Slide',
-        ...config.slideProps
-      },
-    }, {
-      isComponent(el) {
-        if (el.hasAttribute && el.hasAttribute(slideId)) {
-          return { type: slideName };
-        }
-      },
-    }),
-
-    view: defaultView
   });
 }

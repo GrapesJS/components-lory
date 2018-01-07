@@ -1,5 +1,5 @@
 import grapesjs from 'grapesjs';
-import loadComponents from './components';
+import loadComponents from './components/index';
 import loadBlocks from './blocks';
 
 export default grapesjs.plugins.add('grapesjs-lory-slider', (editor, opts = {}) => {
