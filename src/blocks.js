@@ -17,11 +17,11 @@ export default (editor, config = {}) => {
     content: `
       <div class="slider js_slider" ${sliderId}>
           <div class="frame js_frame">
-              <ul class="slides js_slides">
-                  <li class="js_slide">1</li>
-                  <li class="js_slide">2</li>
-                  <li class="js_slide">3</li>
-              </ul>
+              <div class="slides js_slides">
+                  <div class="js_slide"></div>
+                  <div class="js_slide"></div>
+                  <div class="js_slide"></div>
+              </div>
           </div>
           <span class="js_prev prev">
               <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
@@ -50,22 +50,25 @@ export default (editor, config = {}) => {
 
         .slides {
           display: inline-block;
+          transition-delay: 1ms;
         }
 
-        .prev, .next {
+        .prev {
           position: absolute;
           top: 50%;
           margin-top: -25px;
           display: block;
           cursor: pointer;
+          left: 0;
         }
 
         .next {
+          position: absolute;
+          top: 50%;
+          margin-top: -25px;
+          display: block;
+          cursor: pointer;
           right: 0;
-        }
-
-        .prev {
-          left: 0;
         }
 
         .next svg, .prev svg {
@@ -73,9 +76,10 @@ export default (editor, config = {}) => {
         }
 
         .js_slide {
-          position: relative;
           display: inline-block;
-          height: 130px;
+          vertical-align: top;
+          position: relative;
+          min-height: 130px;
           text-align: center;
           font-size: 15px;
           line-height: 30px;

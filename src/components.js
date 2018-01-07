@@ -12,16 +12,13 @@ export default (editor, config = {}) => {
       defaults: { ...defaultModel.prototype.defaults,
         droppable: false,
         script: function () {
-          console.log(this);
           var slider = lory(this, {});
-          console.log(this, slider);
         },
       },
     }, {
       isComponent(el) {
-        if(el.hasAttribute && el.hasAttribute(sliderId)) {
-          console.log('found', el);
-          return {type: sliderName};
+        if (el.hasAttribute && el.hasAttribute(sliderId)) {
+          return { type: sliderName };
         }
       },
     }),

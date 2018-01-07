@@ -1,18 +1,18 @@
-# GrapesJS Tiny Slider
+# GrapesJS Lory Slider
 
 
-Slider component with [tiny-slider](https://github.com/ganlanyuan/tiny-slider) as a dependency
+Slider component by using [lory](https://github.com/meandmax/lory)
 
 
 
 
 ## Summary
 
-* Plugin name: `grapesjs-tiny-slider`
+* Plugin name: `grapesjs-lory-slider`
 * Components
-  * `tiny-slider`
+  * `lory-slider`
 * Blocks
-  * `tiny-slider`
+  * `lory-slider`
 
 
 
@@ -31,11 +31,11 @@ Slider component with [tiny-slider](https://github.com/ganlanyuan/tiny-slider) a
 ## Download
 
 * CDN
-  * `https://unpkg.com/grapesjs-tiny-slider`
+  * `https://unpkg.com/grapesjs-lory-slider`
 * NPM
-  * `npm i grapesjs-tiny-slider`
+  * `npm i grapesjs-lory-slider`
 * GIT
-  * `git clone https://github.com/artf/grapesjs-tiny-slider.git`
+  * `git clone https://github.com/artf/grapesjs-lory-slider.git`
 
 
 
@@ -46,7 +46,7 @@ Slider component with [tiny-slider](https://github.com/ganlanyuan/tiny-slider) a
 ```html
 <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet"/>
 <script src="https://unpkg.com/grapesjs"></script>
-<script src="path/to/grapesjs-tiny-slider.min.js"></script>
+<script src="path/to/grapesjs-lory-slider.min.js"></script>
 
 <div id="gjs"></div>
 
@@ -54,9 +54,9 @@ Slider component with [tiny-slider](https://github.com/ganlanyuan/tiny-slider) a
   var editor = grapesjs.init({
       container : '#gjs',
       ...
-      plugins: ['grapesjs-tiny-slider'],
+      plugins: ['grapesjs-lory-slider'],
       pluginsOpts: {
-        'grapesjs-tiny-slider': {
+        'grapesjs-lory-slider': {
           // options
         }
       }
@@ -73,8 +73,8 @@ Slider component with [tiny-slider](https://github.com/ganlanyuan/tiny-slider) a
 Clone the repository
 
 ```sh
-$ git clone https://github.com/artf/grapesjs-tiny-slider.git
-$ cd grapesjs-tiny-slider
+$ git clone https://github.com/artf/grapesjs-lory-slider.git
+$ cd grapesjs-lory-slider
 ```
 
 Install dependencies

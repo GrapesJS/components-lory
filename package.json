@@ -1,8 +1,8 @@
 {
-  "name": "grapesjs-tiny-slider",
+  "name": "grapesjs-lory-slider",
   "version": "0.1.0",
   "description": "GrapesJS Slider Component",
-  "main": "dist/grapesjs-tiny-slider.min.js",
+  "main": "dist/grapesjs-lory-slider.min.js",
   "scripts": {
     "lint": "eslint src",
     "v:patch": "npm version --no-git-tag-version patch",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/artf/grapesjs-tiny-slider.git"
+    "url": "https://github.com/artf/grapesjs-lory-slider.git"
   },
   "keywords": [
     "grapesjs",
