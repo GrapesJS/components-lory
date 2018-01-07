@@ -4,7 +4,12 @@ export default (dc, config = {}) => {
   const defaultType = dc.getType('default');
   const defaultModel = defaultType.model;
   const defaultView = defaultType.view;
-  const { sliderName, sliderId } = constants;
+  const {
+    prevSelector,
+    nextSelector,
+    sliderName,
+    sliderId
+  } = constants;
 
   dc.addType(sliderName, {
 
@@ -39,7 +44,7 @@ export default (dc, config = {}) => {
         // Cubic bezier easing functions: http://easings.net/de
         ease: 'ease',
 
-        droppable: false,
+        droppable: `${prevSelector}, ${nextSelector}`,
 
         script: function () {
           var falsies = ['0', 'false'];

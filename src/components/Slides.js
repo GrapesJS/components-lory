@@ -3,7 +3,7 @@ import constants from '../constants';
 export default (dc, config = {}) => {
   const defaultType = dc.getType('default');
   const defaultModel = defaultType.model;
-  const { slidesName, slidesId } = constants;
+  const { slidesName, slidesId, slideSelector } = constants;
 
   dc.addType(slidesName, {
 
@@ -11,6 +11,7 @@ export default (dc, config = {}) => {
       defaults: {
         ...defaultModel.prototype.defaults,
         name: 'Slides',
+        droppable: slideSelector,
         ...config.slidesProps
       },
     }, {

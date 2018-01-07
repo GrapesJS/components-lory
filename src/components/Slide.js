@@ -4,7 +4,7 @@ export default (dc, config = {}) => {
   const defaultType = dc.getType('default');
   const defaultModel = defaultType.model;
   const defaultView = defaultType.view;
-  const { slideName, slideId } = constants;
+  const { slideName, slideId, slidesSelector } = constants;
 
   dc.addType(slideName, {
 
@@ -12,6 +12,7 @@ export default (dc, config = {}) => {
       defaults: {
         ...defaultModel.prototype.defaults,
         name: 'Slide',
+        draggable: slidesSelector,
         ...config.slideProps
       },
     }, {
