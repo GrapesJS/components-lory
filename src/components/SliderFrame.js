@@ -1,4 +1,5 @@
 import constants from '../constants';
+import { elHasClass } from '../utils';
 
 export default (dc, config = {}) => {
   const defaultType = dc.getType('default');
@@ -29,12 +30,7 @@ export default (dc, config = {}) => {
       }
     }, {
       isComponent(el) {
-        let cls = el.className;
-        cls = cls && cls.toString();
-
-        if (cls && cls.split(' ').indexOf(config.classFrame) >= 0) {
-          return { type: frameName };
-        }
+        if (elHasClass(el, config.classFrame)) return { type: frameName };
       },
     }),
 

@@ -9,6 +9,7 @@ export default (dc, config = {}) => {
     prevSelector,
     nextSelector,
     sliderName,
+    slidesName,
     sliderId,
     prevId,
     nextId,
@@ -158,7 +159,7 @@ export default (dc, config = {}) => {
         // Add a basic template if it's not yet initialized
         if (!comps.length) {
           comps.add(`<div data-gjs-type="${frameName}">
-              <div class="${config.classSlides}">${config.slideEls}</div>
+              <div data-gjs-type="${slidesName}">${config.slideEls}</div>
           </div>
           <span class="${config.classPrev}">${config.prevEl}</span>
           <span class="${config.classNext}">${config.nextEl}</span>`);

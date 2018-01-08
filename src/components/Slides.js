@@ -1,4 +1,5 @@
 import constants from '../constants';
+import { elHasClass } from '../utils';
 
 export default (dc, config = {}) => {
   const defaultType = dc.getType('default');
@@ -19,11 +20,14 @@ export default (dc, config = {}) => {
         },
         ...config.slidesProps
       },
+
+      init() {
+        const cls = config.classSlides;
+        this.get('classes').pluck('name').indexOf(cls) < 0 && this.addClass(cls);
+      }
     }, {
       isComponent(el) {
-        if (el.hasAttribute && el.hasAttribute(slidesId)) {
-          return { type: slidesName };
-        }
+        if (elHasClass(el, config.classSlides)) return { type: slidesName };
       },
     }),
 
