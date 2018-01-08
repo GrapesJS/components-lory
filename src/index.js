@@ -11,14 +11,14 @@ export default grapesjs.plugins.add('grapesjs-lory-slider', (editor, opts = {}) 
     // Object to extend the default slider properties, eg. `{ name: 'My Slider', draggable: false, ... }`
     sliderProps: {},
 
-    // Object to extend the default slide properties
-    slideProps: {},
+    // Object to extend the default slider frame properties
+    frameProps: {},
 
     // Object to extend the default slides properties
     slidesProps: {},
 
-    // Object to extend the default slider frame properties
-    frameProps: {},
+    // Object to extend the default slide properties
+    slideProps: {},
 
     // Object to extend the default previous nav properties
     prevProps: {},
@@ -28,9 +28,9 @@ export default grapesjs.plugins.add('grapesjs-lory-slider', (editor, opts = {}) 
 
     // Default slides
     slideEls: `
-      <div data-lory-slide></div>
-      <div data-lory-slide></div>
-      <div data-lory-slide></div>
+      <div class="gjs-lory-slide"></div>
+      <div class="gjs-lory-slide"></div>
+      <div class="gjs-lory-slide"></div>
     `,
 
     // Previous nav element string, as for example, an HTML string
@@ -48,6 +48,9 @@ export default grapesjs.plugins.add('grapesjs-lory-slider', (editor, opts = {}) 
 
     // Class name for slides container
     classSlides: 'gjs-lory-slides',
+
+    // Class name for slides container
+    classSlide: 'gjs-lory-slide',
 
     // Class name for slider previous control
     classPrev: 'gjs-lory-prev',
