@@ -1,11 +1,14 @@
 import constants from '../constants';
+import { elHasClass } from '../utils';
 
 export default (dc, config = {}) => {
   const defaultType = dc.getType('default');
   const defaultModel = defaultType.model;
   const { prevName, prevId, sliderSelector } = constants;
+  const classId = config.classPrev;
+  const type = prevName;
 
-  dc.addType(prevName, {
+  dc.addType(type, {
 
     model: defaultModel.extend({
       defaults: {
@@ -23,11 +26,13 @@ export default (dc, config = {}) => {
         },
         ...config.prevProps
       },
+
+      init() {
+        this.get('classes').pluck('name').indexOf(classId) < 0 && this.addClass(classId);
+      }
     }, {
       isComponent(el) {
-        if (el.hasAttribute && el.hasAttribute(prevId)) {
-          return { type: prevName };
-        }
+        if (elHasClass(el, classId)) return { type };
       },
     }),
 

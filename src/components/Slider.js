@@ -10,6 +10,8 @@ export default (dc, config = {}) => {
     nextSelector,
     sliderName,
     slidesName,
+    prevName,
+    nextName,
     sliderId,
     prevId,
     nextId,
@@ -161,8 +163,8 @@ export default (dc, config = {}) => {
           comps.add(`<div data-gjs-type="${frameName}">
               <div data-gjs-type="${slidesName}">${config.slideEls}</div>
           </div>
-          <span class="${config.classPrev}">${config.prevEl}</span>
-          <span class="${config.classNext}">${config.nextEl}</span>`);
+          <span data-gjs-type="${prevName}">${config.prevEl}</span>
+          <span data-gjs-type="${nextName}">${config.nextEl}</span>`);
         }
       },
     }),

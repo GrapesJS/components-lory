@@ -5,8 +5,6 @@ export default (editor, config = {}) => {
   const sliderBlock = config.sliderBlock;
   const { sliderName } = constants;
 
-  // TODO make js_frame, js_slides, js_prev, js_next private
-
   sliderBlock && bm.add(sliderName, {
     label: `
       <svg class="gjs-block-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
