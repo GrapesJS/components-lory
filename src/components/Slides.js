@@ -31,6 +31,15 @@ export default (dc, config = {}) => {
       },
     }),
 
-    view: defaultType.view
+    view: defaultType.view.extend({
+      init() {
+        this.listenTo(this.model.components(), 'add remove', this.renderSlider);
+      },
+
+      renderSlider() {
+        const slider = this.model.parent().parent();
+        slider && slider.view.render();
+      }
+    })
   });
 }
