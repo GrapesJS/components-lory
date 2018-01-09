@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-lory-slider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "GrapesJS Slider Component",
   "main": "dist/grapesjs-lory-slider.min.js",
   "scripts": {

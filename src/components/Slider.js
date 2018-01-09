@@ -106,7 +106,7 @@ export default (dc, config = {}) => {
         'class-prev': config.classPrev,
         'class-next': config.classNext,
 
-        script: function () {
+        script() {
           var el = this;
           var deps = '{[ script-deps ]}';
           var falsies = ['0', 'false'];

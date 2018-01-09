@@ -17,12 +17,12 @@ export default (dc, config = {}) => {
         style: {
           display: `inline-block`,
           position: 'relative',
-          background: '#2E435A',
           color: '#fff',
           width: '880px',
           'margin-right': '10px',
           'vertical-align': 'top',
           'min-height': '130px',
+          'background-color': 'rgba(0, 0, 0, 0.1)',
         },
         ...config.slideProps
       },
