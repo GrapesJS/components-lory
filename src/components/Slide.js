@@ -22,6 +22,7 @@ export default (dc, config = {}) => {
           'margin-right': '10px',
           'vertical-align': 'top',
           'min-height': '130px',
+          'white-space': 'normal',
           'background-color': 'rgba(0, 0, 0, 0.1)',
         },
         ...config.slideProps

@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-lory-slider",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "GrapesJS Slider Component",
   "main": "dist/grapesjs-lory-slider.min.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "grapesjs",
     "plugin",
     "slider",
+    "lory",
     "wysiwyg"
   ],
   "author": "Artur Arseniev",
